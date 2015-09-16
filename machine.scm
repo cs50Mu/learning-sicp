@@ -337,7 +337,7 @@
         (let ((insts (lookup-label labels
                                    (label-exp-label dest))))
           (lambda ()
-            (if (get-contents flag)
+            (if (get-contents flag)                             ;如果flag内容为真，则执行branch，否则跳过
                 (set-contents! pc insts)
                 (advance-pc pc))))
         (error "Bad BRANCH instruction -- ASSEMBLE"
